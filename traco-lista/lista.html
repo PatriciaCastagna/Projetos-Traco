@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    </head>
+
+<body>
+
+    <p id="cabecalho">
+
+        Meu programa em JavaScript - LISTA
+
+    </p>
+    <p id="lista">
+
+        Lista de produtos
+
+    </p>
+
+    
+    <p id="acoes">
+
+        <input type="button" value="Adicionar Item" onclick="InserirItem(mylist)";>
+        <input type="button" value="Excluir Item"onclick="RemoverItem(mylist)";>
+
+    </p>
+    
+</body>
+
+<script>
+    var mylist = [];
+
+    function mostrarLista(arr) {
+
+        var textoRetorno = "";
+
+        for(i=0; i<=arr.length-1; i++ ){
+
+            textoRetorno += i + " - " + arr[i] + "<br>"
+
+
+
+        }
+
+        document.getElementById("lista").innerHTML=textoRetorno;
+
+    
+    }
+
+    function InserirItem (arr){
+
+        var novoItem = prompt("Digite um novo item:");
+
+        if (novoItem != null && novoItem != ""){
+
+            arr.push(novoItem);
+
+
+        }else{
+            alert("nenhum item foi digitado!");
+        }
+
+        mostrarLista(arr);
+       
+
+
+    }
+
+    function RemoverItem(arr){
+
+        var excluirI = prompt("Digite o numero do item a excluir:");
+
+        if (excluirI != null && excluirI != ""){
+
+        arr.splice(excluirI,1);
+
+        }else{
+            alert("nenhum item foi Removido!");
+        }
+
+        mostrarLista(arr);
+
+
+
+    }
+
+    
+    
+
+
+
+</script>
+ 
+
+
+
+
+</html>
